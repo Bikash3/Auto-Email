@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Auto Emails
- * Plugin URI: 
- * Description: The easiest way to send automated emails.
+ * Plugin URI: https://github.com/Bikash3/Auto-Email
+ * Description: The easiest way to send automated emails to your customer.
  * Version: 1.0
- * Author: Bik <bikash.sarkar43@gmail.com>
- * Author URI: 
+ * Author: Bik
+ * Author URI: mailto:bikash.sarkar43@gmail.com
  */
 
 
@@ -20,20 +20,8 @@ function autoEmail(){
     $icon_url = null;
     $position =  26;
     add_menu_page( $page_title, $menu_title, $capability, 'test-plugin', $function, $icon_url, $position );
-    add_submenu_page( 'test-plugin', 'Form', 'Form', 'manage_options', 'form-slug', 'autoemail_list_init');
+    add_submenu_page( 'test-plugin', 'Forms', 'Forms', 'manage_options', 'form-slug', 'autoemail_form_init');
     add_submenu_page( 'test-plugin', 'Lists', 'Lists', 'manage_options', 'list-slug', 'autoemail_list_init');
     add_submenu_page( 'test-plugin', 'Flows', 'Flows', 'manage_options', 'flows-slug', 'autoemail_flows_init');
 };
-
-function autoemail_init(){
-    echo "<h1>Test</h1>";
-};
-function autoemail_form_init(){
-    _e("<h1>Form</h1>");
-};
-function autoemail_list_init(){
-    _e("<h1>Lists</h1>");
-};
-function autoemail_flows_init(){
-    echo "<h1>Flows</h1>";
-};
+include("includes/function.php");
